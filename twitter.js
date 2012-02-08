@@ -3,7 +3,7 @@ Ext.Loader.setConfig({
         'MH' : '',
         'MH.application': 'controller'
     },
-    disableCaching: false
+    disableCaching: true
 });
 
 Ext.application({
@@ -13,25 +13,6 @@ Ext.application({
     controllers: ['MH.application.Controller'],
 
     launch: function() {
-//        Ext.create('MH.view.LoginForm');
-
-//        Ext.Viewport.add({
-//            items: {
-//                xtype: 'loginPanel'
-//            }
-//        });
-//        Ext.onReady(function() {
-
-        var loginForm = Ext.create('MH.view.LoginForm');
-
-        Ext.create("Ext.TabPanel", {
-            fullscreen: true,
-            items: [{
-                title: "Test",
-                iconCls: 'home',
-                items: [loginForm]
-            }]
-        })
-//        });
+        Ext.create('MH.view.LoginForm');
     }
 });

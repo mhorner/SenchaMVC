@@ -1,7 +1,9 @@
 Ext.define("MH.view.LoginForm", {
     extend: "Ext.form.Panel",
     alias: ["loginForm"],
-    fullscreen: true,
+    config: {
+        fullscreen: true
+    },
 
     initialize: function() {
         var me = this;
@@ -11,14 +13,19 @@ Ext.define("MH.view.LoginForm", {
     },
 
     addFields: function() {
-        Ext.apply(this, {
-            items: [{
-                xtype: 'textfield',
-                name: 'login'
-            }, {
-                xtype: 'passwordfield',
-                name: 'password'
-            }]
+        this.add({
+            items: {
+                xtype: 'fieldset',
+                items: [{
+                    xtype: 'textfield',
+                    name: 'login',
+                    label: "Login"
+                }, {
+                    xtype: 'passwordfield',
+                    name: 'password',
+                    label: "Password"
+                }]
+            }
         });
     }
 });
